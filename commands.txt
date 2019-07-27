@@ -1,0 +1,5 @@
+# If GRPC build fails
+sudo npm rebuild --unsafe-perm --build-from-source grpc
+
+# Starting the app
+LOG_LEVEL=debug node app.js | ./node_modules/.bin/pino-pretty
