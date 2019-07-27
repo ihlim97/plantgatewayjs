@@ -2,4 +2,4 @@
 sudo npm rebuild --unsafe-perm --build-from-source grpc
 
 # Starting the app
-LOG_LEVEL=debug node app.js | ./node_modules/.bin/pino-pretty
+LOG_LEVEL=debug sudo node app.js | ./node_modules/.bin/pino-pretty

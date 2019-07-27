@@ -43,16 +43,18 @@ logger.info(`Scan duration set at: ${opts.duration / 1000}s`);
 
 
 const interval = parseInt(process.env["SCHEDULER_INTERVAL"]);
-logger.info(`Scheduler will run every ${moment().milliseconds(interval).minutes()} minutes`)
+logger.info(`Scheduler is set to run every ${interval} minutes`)
 
 readSensors();
+let nextScan = moment().add(interval, "m").fromNow();
+logger.info(`SCAN COMPLETED. NEXT SCAN ${nextScan}`)
 
 setInterval(function() {
     readSensors();
-    let nextScan = moment.unix(Date.now() + process.env.SCHEDULER_INTERVAL).fromNow();
+    let nextScan = moment().add(interval, "m").fromNow();
     logger.info(`SCAN COMPLETED. NEXT SCAN ${nextScan}`)
 
-}, process.env.SCHEDULER_INTERVAL);
+}, process.env.SCHEDULER_INTERVAL * 60 * 1000);
 
 
 function readSensors() {
