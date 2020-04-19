@@ -13,7 +13,7 @@
   "dependencies": {
     "dotenv": "^8.0.0",
     "firebase": "^6.3.2",
-    "miflora": "^1.0.3",
+    "miflora": "^1.0.5",
     "moment": "^2.24.0",
     "noble": "^1.9.1",
     "pino": "^5.13.1"
